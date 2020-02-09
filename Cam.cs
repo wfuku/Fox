@@ -11,6 +11,10 @@ public class Cam : MonoBehaviour {
     public float wallHeightHalf;
     public float backLimit;
 
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
     // Use this for initialization
     void Start () {
         x = CharPosition.transform.position.x;
