@@ -58,6 +58,10 @@ public class MinoriState : MonoBehaviour
     //操作
     void GetInputKey()
     {
+        //デバック用、キャラ状態の変更
+        if (Input.GetKeyDown(KeyCode.C)) biyaku = !biyaku;
+
+        //操作系、keyによって方向の制御
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             if (isGround == true && isAttack1 != true)
@@ -168,6 +172,7 @@ public class MinoriState : MonoBehaviour
     void Condition()
     {
         if (biyaku){ animator.SetBool("isBiyakuMode",true);}
+        else { animator.SetBool("isBiyakuMode", false); }
     }
 
     //やられ開始、やられ、やられ終了
